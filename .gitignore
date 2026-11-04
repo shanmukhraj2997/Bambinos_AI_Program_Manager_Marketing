@@ -1,0 +1,32 @@
+# Original classroom recordings and source transcripts - keep private/local
+/videos/
+/transcripts/
+/marketing/full_class_videos/
+/marketing/transcripts/
+
+# Video and audio files
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+
+# Raw WebVTT transcripts
+*.vtt
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+
+# Python / editor artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
