@@ -1,0 +1,654 @@
+{
+  "name": "Bambinos - Candidate Intake and Human Review Gate (MVP v2)",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Bambinos Candidate Intake",
+        "formDescription": "Submit an already-anonymised candidate record for tracker logging and review-gate checks. Do not enter child names, ages, contact details, family information, raw transcripts, or other identifying information. This workflow does not approve advertising.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Session ID",
+              "fieldName": "session_id",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Subject",
+              "fieldName": "subject",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "English"
+                  },
+                  {
+                    "option": "Gita / Little Yogi"
+                  },
+                  {
+                    "option": "Maths"
+                  },
+                  {
+                    "option": "Science"
+                  },
+                  {
+                    "option": "Other"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Candidate ID",
+              "fieldName": "candidate_id",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Start Timestamp (HH:MM:SS.mmm)",
+              "fieldName": "start_timestamp",
+              "placeholder": "00:00:00.000",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "End Timestamp (HH:MM:SS.mmm)",
+              "fieldName": "end_timestamp",
+              "placeholder": "00:00:15.000",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Proposed 3-second Hook",
+              "fieldName": "hook",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Moment Bucket",
+              "fieldName": "moment_bucket",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Aha Moments"
+                  },
+                  {
+                    "option": "Curiosity Moments"
+                  },
+                  {
+                    "option": "Problem-Solving"
+                  },
+                  {
+                    "option": "Creative Expression"
+                  },
+                  {
+                    "option": "Interactive Learning"
+                  },
+                  {
+                    "option": "Confidence Moments"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Anonymised Verbatim Dialogue",
+              "fieldName": "verbatim_dialogue",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Parent Value Score (0-2)",
+              "fieldName": "parent_value_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Hook Score (0-2)",
+              "fieldName": "hook_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Participation Score (0-2)",
+              "fieldName": "participation_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Emotion Score (0-1)",
+              "fieldName": "emotion_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Visual Score (0-1)",
+              "fieldName": "visual_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Audio Score (0-1)",
+              "fieldName": "audio_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Mute Readability Score (0-1)",
+              "fieldName": "mute_readability_score",
+              "fieldType": "number",
+              "requiredField": false
+            },
+            {
+              "fieldLabel": "Geography Fit",
+              "fieldName": "geography_fit",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "India"
+                  },
+                  {
+                    "option": "GCC"
+                  },
+                  {
+                    "option": "International"
+                  },
+                  {
+                    "option": "Multiple Markets"
+                  },
+                  {
+                    "option": "Uncertain"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Compliance Flags (no identifying details)",
+              "fieldName": "compliance_flags",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Visual Verification",
+              "fieldName": "visual_verification",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Not Verified"
+                  },
+                  {
+                    "option": "Verified – Pass"
+                  },
+                  {
+                    "option": "Verified – Fail"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Hard Exclusion Identified?",
+              "fieldName": "hard_exclusion_status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "No"
+                  },
+                  {
+                    "option": "Yes"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Guardian Marketing Consent",
+              "fieldName": "consent_status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Not checked"
+                  },
+                  {
+                    "option": "Pending"
+                  },
+                  {
+                    "option": "Confirmed"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Privacy Review",
+              "fieldName": "privacy_review_status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Pending"
+                  },
+                  {
+                    "option": "Passed"
+                  },
+                  {
+                    "option": "Failed"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Cultural / Context Review",
+              "fieldName": "context_review_status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Not Required"
+                  },
+                  {
+                    "option": "Pending"
+                  },
+                  {
+                    "option": "Completed"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Editor Instructions",
+              "fieldName": "editor_instructions",
+              "fieldType": "textarea",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "I confirm this submission is anonymised or synthetic and approved for this workflow",
+              "fieldName": "anonymised_data_confirmation",
+              "fieldType": "checkbox",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "buttonLabel": "Submit Candidate for Review"
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        260,
+        300
+      ],
+      "id": "f0e7f3a4-59c0-4a80-90d1-102fa3110001",
+      "name": "Candidate Intake Form",
+      "webhookId": "d6e3b1a4-9f7d-4a2a-8c36-a7f8d7b3e901"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const items = $input.all();\n\nfunction getField(f, ...keys) {\n  for (const k of keys) {\n    if (f[k] !== undefined && f[k] !== null && String(f[k]).trim() !== '') {\n      return f[k];\n    }\n  }\n  return '';\n}\n\nfunction toNumber(value) {\n  if (value === undefined || value === null || String(value).trim() === '') return null;\n  const n = Number(value);\n  return Number.isFinite(n) ? n : null;\n}\n\nfunction parseTimestamp(value) {\n  const match = String(value || '').trim().match(/^(\\d{2,}):(\\d{2}):(\\d{2})(?:\\.(\\d{1,3}))?$/);\n  if (!match) return null;\n  const hours = Number(match[1]);\n  const minutes = Number(match[2]);\n  const seconds = Number(match[3]);\n  const milliseconds = Number((match[4] || '0').padEnd(3, '0'));\n  if (minutes > 59 || seconds > 59) return null;\n  return hours * 3600 + minutes * 60 + seconds + milliseconds / 1000;\n}\n\nconst output = [];\nfor (const item of items) {\n  const f = item.json;\n\n  const rawConfirm =\n    f['anonymised_data_confirmation'] !== undefined\n      ? f['anonymised_data_confirmation']\n      : f['I confirm this submission is anonymised or synthetic and approved for this workflow'];\n\n  const confirmed =\n    rawConfirm === true ||\n    (Array.isArray(rawConfirm) && rawConfirm.length > 0) ||\n    ['true', 'on', 'yes', 'confirmed', 'i confirm'].some((v) =>\n      String(rawConfirm ?? '').toLowerCase().trim().includes(v)\n    );\n\n  if (!confirmed) {\n    throw new Error('Submission stopped: confirm that the data is synthetic or anonymised and approved for this workflow.');\n  }\n\n  const mapped = {\n    session_id: getField(f, 'session_id', 'Session ID'),\n    subject: getField(f, 'subject', 'Subject'),\n    candidate_id: getField(f, 'candidate_id', 'Candidate ID'),\n    start_timestamp: getField(f, 'start_timestamp', 'Start Timestamp (HH:MM:SS.mmm)', 'Start Timestamp'),\n    end_timestamp: getField(f, 'end_timestamp', 'End Timestamp (HH:MM:SS.mmm)', 'End Timestamp'),\n    hook: getField(f, 'hook', 'Proposed 3-second Hook', 'Hook'),\n    moment_bucket: getField(f, 'moment_bucket', 'Moment Bucket'),\n    verbatim_dialogue: getField(f, 'verbatim_dialogue', 'Anonymised Verbatim Dialogue', 'Verbatim Dialogue'),\n    parent_value_score: getField(f, 'parent_value_score', 'Parent Value Score (0-2)', 'Parent Value Score'),\n    hook_score: getField(f, 'hook_score', 'Hook Score (0-2)', 'Hook Score'),\n    participation_score: getField(f, 'participation_score', 'Participation Score (0-2)', 'Participation Score'),\n    emotion_score: getField(f, 'emotion_score', 'Emotion Score (0-1)', 'Emotion Score'),\n    visual_score: getField(f, 'visual_score', 'Visual Score (0-1)', 'Visual Score'),\n    audio_score: getField(f, 'audio_score', 'Audio Score (0-1)', 'Audio Score'),\n    mute_readability_score: getField(f, 'mute_readability_score', 'Mute Readability Score (0-1)', 'Mute Readability Score'),\n    geography_fit: getField(f, 'geography_fit', 'Geography Fit'),\n    compliance_flags: getField(f, 'compliance_flags', 'Compliance Flags (no identifying details)', 'Compliance Flags'),\n    visual_verification: getField(f, 'visual_verification', 'Visual Verification'),\n    hard_exclusion_status: getField(f, 'hard_exclusion_status', 'Hard Exclusion Identified?', 'Hard Exclusion'),\n    consent_status: getField(f, 'consent_status', 'Guardian Marketing Consent', 'Consent Status'),\n    privacy_review_status: getField(f, 'privacy_review_status', 'Privacy Review', 'Privacy Review Status'),\n    context_review_status: getField(f, 'context_review_status', 'Cultural / Context Review', 'Context Review Status'),\n    editor_instructions: getField(f, 'editor_instructions', 'Editor Instructions')\n  };\n\n  const required = [\n    'session_id', 'subject', 'candidate_id', 'start_timestamp', 'end_timestamp',\n    'hook', 'moment_bucket', 'verbatim_dialogue', 'geography_fit', 'compliance_flags',\n    'visual_verification', 'hard_exclusion_status', 'consent_status',\n    'privacy_review_status', 'context_review_status', 'editor_instructions'\n  ];\n  const missing = required.filter((key) => !String(mapped[key] ?? '').trim());\n  if (missing.length) throw new Error('Missing required fields: ' + missing.join(', '));\n\n  const start = parseTimestamp(mapped.start_timestamp);\n  const end = parseTimestamp(mapped.end_timestamp);\n  if (start === null || end === null || end <= start) {\n    throw new Error('Invalid timestamp range. Use HH:MM:SS.mmm and ensure end is after start.');\n  }\n  const duration = Number((end - start).toFixed(3));\n  if (duration < 10 || duration > 20) {\n    throw new Error(`Candidate duration must be between 10 and 20 seconds. Received ${duration} seconds.`);\n  }\n\n  const rejected = mapped.hard_exclusion_status === 'Yes' ||\n    mapped.privacy_review_status === 'Failed' ||\n    mapped.visual_verification === 'Verified – Fail';\n\n  const definitions = [\n    ['Parent Value Score', 'parent_value_score', 2],\n    ['Hook Score', 'hook_score', 2],\n    ['Participation Score', 'participation_score', 2],\n    ['Emotion Score', 'emotion_score', 1],\n    ['Visual Score', 'visual_score', 1],\n    ['Audio Score', 'audio_score', 1],\n    ['Mute Readability Score', 'mute_readability_score', 1]\n  ];\n  const scoreFields = definitions.map(([label, key, maximum]) => ({\n    label, value: toNumber(mapped[key]), maximum\n  }));\n\n  let totalScore = null;\n  if (!rejected) {\n    for (const score of scoreFields) {\n      if (score.value === null || !Number.isInteger(score.value) || score.value < 0 || score.value > score.maximum) {\n        throw new Error(`${score.label} must be an integer between 0 and ${score.maximum}.`);\n      }\n    }\n    totalScore = scoreFields.reduce((sum, score) => sum + score.value, 0);\n  }\n\n  const notes = [];\n  let decision = 'Needs Review';\n  if (rejected) {\n    decision = 'Rejected';\n    notes.push('Hard exclusion, failed privacy review, or failed visual verification. Scores and dialogue are withheld for this rejected record. Do not use in advertising.');\n  } else {\n    if (mapped.visual_verification !== 'Verified – Pass') notes.push('Human audio-visual verification is pending.');\n    if (mapped.consent_status !== 'Confirmed') notes.push('Guardian marketing consent is not confirmed.');\n    if (mapped.privacy_review_status !== 'Passed') notes.push('Privacy review is not marked as passed.');\n    if (mapped.context_review_status === 'Pending') notes.push('Cultural/context review is pending.');\n    if (totalScore < 7) notes.push('Score is below the 7/10 threshold; any exception requires documented human review.');\n    if (notes.length === 0) {\n      decision = 'Eligible for Editor Review';\n      notes.push('Configured intake gates passed. This is not final advertising approval; authorised human approval and final creative QA remain mandatory.');\n    }\n  }\n\n  const row = {\n    'Session ID': String(mapped.session_id).trim(),\n    'Subject': String(mapped.subject).trim(),\n    'Candidate ID': String(mapped.candidate_id).trim(),\n    'Start Timestamp': String(mapped.start_timestamp).trim(),\n    'End Timestamp': String(mapped.end_timestamp).trim(),\n    'Duration': duration,\n    'Hook': String(mapped.hook).trim(),\n    'Moment Bucket': String(mapped.moment_bucket).trim(),\n    'Verbatim Dialogue': rejected ? '[REDACTED — rejected record; do not reproduce]' : String(mapped.verbatim_dialogue).trim(),\n    'Parent Value Score': rejected ? '' : scoreFields[0].value,\n    'Hook Score': rejected ? '' : scoreFields[1].value,\n    'Participation Score': rejected ? '' : scoreFields[2].value,\n    'Emotion Score': rejected ? '' : scoreFields[3].value,\n    'Visual Score': rejected ? '' : scoreFields[4].value,\n    'Audio Score': rejected ? '' : scoreFields[5].value,\n    'Mute Readability Score': rejected ? '' : scoreFields[6].value,\n    'Total Score': rejected ? '' : totalScore,\n    'Geography Fit': String(mapped.geography_fit).trim(),\n    'Compliance Flags': String(mapped.compliance_flags).trim(),\n    'Visual Verification': String(mapped.visual_verification).trim(),\n    'Final Decision': decision,\n    'Editor Instructions': String(mapped.editor_instructions).trim(),\n    'Consent Status': String(mapped.consent_status).trim(),\n    'Privacy Review Status': String(mapped.privacy_review_status).trim(),\n    'Context Review Status': String(mapped.context_review_status).trim(),\n    'Hard Exclusion': String(mapped.hard_exclusion_status).trim(),\n    'Automation Gate Notes': notes.join(' '),\n    'Submitted At': f.submittedAt || new Date().toISOString()\n  };\n  output.push({ json: row });\n}\nreturn output;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        300
+      ],
+      "id": "f0e7f3a4-59c0-4a80-90d1-102fa3110002",
+      "name": "Validate Scores and Apply Review Gates"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "REPLACE_WITH_YOUR_GOOGLE_SPREADSHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Automation Intake",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "schema": [
+            {
+              "id": "Session ID",
+              "displayName": "Session ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Subject",
+              "displayName": "Subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Candidate ID",
+              "displayName": "Candidate ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Start Timestamp",
+              "displayName": "Start Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "End Timestamp",
+              "displayName": "End Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Duration",
+              "displayName": "Duration",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hook",
+              "displayName": "Hook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Moment Bucket",
+              "displayName": "Moment Bucket",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Verbatim Dialogue",
+              "displayName": "Verbatim Dialogue",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Parent Value Score",
+              "displayName": "Parent Value Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hook Score",
+              "displayName": "Hook Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Participation Score",
+              "displayName": "Participation Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Emotion Score",
+              "displayName": "Emotion Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Visual Score",
+              "displayName": "Visual Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Audio Score",
+              "displayName": "Audio Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Mute Readability Score",
+              "displayName": "Mute Readability Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Total Score",
+              "displayName": "Total Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Geography Fit",
+              "displayName": "Geography Fit",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Compliance Flags",
+              "displayName": "Compliance Flags",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Visual Verification",
+              "displayName": "Visual Verification",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Final Decision",
+              "displayName": "Final Decision",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Editor Instructions",
+              "displayName": "Editor Instructions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Consent Status",
+              "displayName": "Consent Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Privacy Review Status",
+              "displayName": "Privacy Review Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Context Review Status",
+              "displayName": "Context Review Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hard Exclusion",
+              "displayName": "Hard Exclusion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Automation Gate Notes",
+              "displayName": "Automation Gate Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Submitted At",
+              "displayName": "Submitted At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED",
+          "useAppend": true
+        },
+        "resource": "sheet"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        860,
+        300
+      ],
+      "id": "f0e7f3a4-59c0-4a80-90d1-102fa3110003",
+      "name": "Append Review Record to Google Sheets",
+      "notes": "Before running: select your Google Sheets OAuth2 credential, replace the spreadsheet ID, create an Automation Intake tab, and put the exact output column names in row 1. This node uses automatic mapping, so sheet headers must exactly match the output field names. Do not send raw child-identifying information to this workflow."
+    }
+  ],
+  "connections": {
+    "Candidate Intake Form": {
+      "main": [
+        [
+          {
+            "node": "Validate Scores and Apply Review Gates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Scores and Apply Review Gates": {
+      "main": [
+        [
+          {
+            "node": "Append Review Record to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata"
+  },
+  "versionId": "bambinos-n8n-mvp-v1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}
